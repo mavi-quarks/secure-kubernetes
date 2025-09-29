@@ -16,8 +16,8 @@
     - [🧩 YAML Specification Files](#-yaml-specification-files)
     - [🧩 Multiple Deployments Creation](#-multiple-deployments-creation)
   - [File Structure](#file-structure)
-  - [�️ Applying Kubernetes Manifests](#️-applying-kubernetes-manifests)
-  - [🛠️ Troubleshooting](#️-troubleshooting)
+  - [⚒️ Applying Kubernetes Manifests](#️-applying-kubernetes-manifests)
+  - [⚒️ Troubleshooting](#️-troubleshooting)
   - [References](#references)
 
 #### 🧩 My Setup
@@ -476,7 +476,7 @@ readme-phase1-core.md
 
 ---
 
-## 🛠️ Applying Kubernetes Manifests
+## ⚒️ Applying Kubernetes Manifests
 
 To deploy resources defined in YAML files:
 ```sh
@@ -490,7 +490,7 @@ kubectl apply -f core/
 
 ---
 
-## 🛠️ Troubleshooting
+## ⚒️ Troubleshooting
 
 - **Minikube fails to start:** Try `minikube delete` then `minikube start --driver=docker`.
 - **Pods not running:** Check logs with `kubectl logs <pod-name>`.
