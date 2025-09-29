@@ -1,8 +1,8 @@
 
-# Kubernetes Core
+# ☸️ Kubernetes Core
 
 ## Table of Contents
-- [Kubernetes Core](#kubernetes-core)
+- [☸️ Kubernetes Core](#️-kubernetes-core)
   - [Table of Contents](#table-of-contents)
       - [🧩 My Setup](#-my-setup)
       - [🧩 Cluster and Nodes](#-cluster-and-nodes)
@@ -13,11 +13,11 @@
     - [🧩 Deploying using your Custom Image](#-deploying-using-your-custom-image)
     - [🧩 NodePort Service](#-nodeport-service)
     - [🧩 Rolling Updates and Pods Recovery](#-rolling-updates-and-pods-recovery)
-    - [YAML Specification Files](#yaml-specification-files)
+    - [🧩 YAML Specification Files](#-yaml-specification-files)
     - [🧩 Multiple Deployments Creation](#-multiple-deployments-creation)
   - [File Structure](#file-structure)
-  - [🚀 Applying Kubernetes Manifests](#-applying-kubernetes-manifests)
-  - [Troubleshooting](#troubleshooting)
+  - [�️ Applying Kubernetes Manifests](#️-applying-kubernetes-manifests)
+  - [🛠️ Troubleshooting](#️-troubleshooting)
   - [References](#references)
 
 #### 🧩 My Setup
@@ -389,7 +389,7 @@ k delete all --all
 
 ---
 
-### YAML Specification Files
+### 🧩 YAML Specification Files
 - Create `deployment.yaml`
 - Create `service.yaml`
 - [Kubernetes DeploymentSpec Reference](https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/deployment-v1/#DeploymentSpec)
@@ -476,7 +476,7 @@ readme-phase1-core.md
 
 ---
 
-## 🚀 Applying Kubernetes Manifests
+## 🛠️ Applying Kubernetes Manifests
 
 To deploy resources defined in YAML files:
 ```sh
@@ -490,7 +490,7 @@ kubectl apply -f core/
 
 ---
 
-## Troubleshooting
+## 🛠️ Troubleshooting
 
 - **Minikube fails to start:** Try `minikube delete` then `minikube start --driver=docker`.
 - **Pods not running:** Check logs with `kubectl logs <pod-name>`.
