@@ -5,12 +5,12 @@ A hands-on, modular guide to building, securing, monitoring, and scaling Kuberne
 ## 📂 Project Structure
 
 - [core/](core/) — Core Kubernetes manifests, app source code, and basic cluster setup
-- [securing-basic/](securing-basic/) — Advanced topics: securing, monitoring, and scaling Kubernetes
+- [advanced/](advanced/) — Advanced topics: securing, monitoring, and scaling Kubernetes
 
 ## 📖 Documentation
 
-- [Kubernetes Core Guide](core/../readme-phase1-core.md)
-- [Securing, Monitoring & Scaling Guide](securing-basic/../readme-phase2-securing-basic.md)
+- [Kubernetes Core Guide](core/../readme-core.md)
+- [Securing, Monitoring & Scaling Guide](advanced/../readme-advanced.md)
 
 ## 🖼️ Reference Architecture
 
