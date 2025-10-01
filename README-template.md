@@ -1,19 +1,21 @@
-# <Project/Phase Title>
+# 🛡️<Project/Phase Title>
 
 ## Table of Contents
-- [Setup](#setup)
-- [Cluster and Nodes](#cluster-and-nodes)
-- [Inside the Pod](#inside-the-pod)
-- [Deployments](#deployments)
-- [Services](#services)
-- [Custom Images](#custom-images)
-- [NodePort & LoadBalancer](#nodeport--loadbalancer)
-- [Rolling Updates](#rolling-updates)
-- [Multiple Deployments](#multiple-deployments)
-- [File Structure](#file-structure)
-- [Applying YAML Files](#applying-yaml-files)
-- [Troubleshooting](#troubleshooting)
-- [References](#references)
+- [🛡️\<Project/Phase Title\>](#️projectphase-title)
+  - [Table of Contents](#table-of-contents)
+  - [🧩 Setup](#-setup)
+  - [🧩 Cluster and Nodes](#-cluster-and-nodes)
+  - [🧩 Inside the Pod](#-inside-the-pod)
+  - [🧩 Deployments](#-deployments)
+  - [🧩 Services](#-services)
+  - [🐳 Custom Images](#-custom-images)
+  - [🧩 NodePort \& LoadBalancer](#-nodeport--loadbalancer)
+  - [🧩 Rolling Updates](#-rolling-updates)
+  - [🧩 Multiple Deployments](#-multiple-deployments)
+  - [File Structure](#file-structure)
+  - [Applying YAML Files](#applying-yaml-files)
+  - [Troubleshooting](#troubleshooting)
+  - [References](#references)
 
 ---
 
