@@ -25,6 +25,9 @@ Thumbs.db
 # VS Code
 .vscode/
 
+# intellij
+.idea/
+
 # Misc
 *.swp
 *~
