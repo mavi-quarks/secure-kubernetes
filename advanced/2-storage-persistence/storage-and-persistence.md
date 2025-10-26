@@ -2,16 +2,16 @@
 
 ## Table of Contents
 - [📦 Kubernetes Storage \& Persistence](#-kubernetes-storage--persistence)
-  - [Table of Contents](#table-of-contents)
-  - [🗂️ Overview](#️-overview)
-  - [🕑 Ephemeral Storage: `emptyDir`](#-ephemeral-storage-emptydir)
-    - [Example:](#example)
-  - [💾 Persistent Storage: PV \& PVC](#-persistent-storage-pv--pvc)
-    - [📖 Definitions](#-definitions)
-    - [📝 Sample YAML](#-sample-yaml)
-    - [🎯 Use Cases](#-use-cases)
-  - [🛠️ Troubleshooting](#️-troubleshooting)
-  - [📚 References](#-references)
+	- [Table of Contents](#table-of-contents)
+	- [🗂️ Overview](#️-overview)
+	- [🕑 Ephemeral Storage: `emptyDir`](#-ephemeral-storage-emptydir)
+		- [Example:](#example)
+	- [💾 Persistent Storage: PV \& PVC](#-persistent-storage-pv--pvc)
+		- [📖 Definitions](#-definitions)
+		- [📝 Sample YAML](#-sample-yaml)
+		- [🎯 Use Cases](#-use-cases)
+	- [🛠️ Troubleshooting](#️-troubleshooting)
+	- [📚 References](#-references)
 
 ---
 
@@ -150,6 +150,4 @@ spec:
 - [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
 - [emptyDir Volume](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir)
 
----
 
-🎉 Happy Persisting!

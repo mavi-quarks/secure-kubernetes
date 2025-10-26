@@ -1,13 +1,14 @@
 # 🚀 Dynamic Provisioning & StatefulSets in Kubernetes
 
 ## Table of Contents
-- [Overview](#overview)
-- [Dynamic PVCs](#dynamic-pvcs)
-- [StatefulSets with Dynamic Storage](#statefulsets-with-dynamic-storage)
-- [Manual Local PVs & PVCs](#manual-local-pvs--pvcs)
-- [Sample YAMLs](#sample-yamls)
-- [Tips & Use Cases](#tips--use-cases)
-- [References](#references)
+- [🚀 Dynamic Provisioning \& StatefulSets in Kubernetes](#-dynamic-provisioning--statefulsets-in-kubernetes)
+	- [Table of Contents](#table-of-contents)
+	- [🗂️ Overview](#️-overview)
+	- [⚡ Dynamic PVCs](#-dynamic-pvcs)
+	- [🏗️ StatefulSets with Dynamic Storage](#️-statefulsets-with-dynamic-storage)
+	- [🗃️ Manual Local PVs \& PVCs](#️-manual-local-pvs--pvcs)
+	- [📝 Tips \& Use Cases](#-tips--use-cases)
+	- [📚 References](#-references)
 
 ---
 
@@ -156,6 +157,4 @@ spec:
 - [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
 - [Dynamic Provisioning](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/)
 
----
 
-🎉 Happy Stateful Deployments!

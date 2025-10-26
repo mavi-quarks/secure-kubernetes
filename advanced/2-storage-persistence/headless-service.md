@@ -1,13 +1,14 @@
 # 🧑‍🔬 Headless Services & StatefulSets in Kubernetes
 
 ## Table of Contents
-- [Overview](#overview)
-- [What is a Headless Service?](#what-is-a-headless-service)
-- [StatefulSet with Headless Service](#statefulset-with-headless-service)
-- [Debugging with Curl Pod](#debugging-with-curl-pod)
-- [Sample YAMLs](#sample-yamls)
-- [Tips & Use Cases](#tips--use-cases)
-- [References](#references)
+- [🧑‍🔬 Headless Services \& StatefulSets in Kubernetes](#-headless-services--statefulsets-in-kubernetes)
+	- [Table of Contents](#table-of-contents)
+	- [🗂️ Overview](#️-overview)
+	- [🧑‍🚀 What is a Headless Service?](#-what-is-a-headless-service)
+	- [🏗️ StatefulSet with Headless Service](#️-statefulset-with-headless-service)
+	- [🐚 Debugging with Curl Pod](#-debugging-with-curl-pod)
+	- [📝 Tips \& Use Cases](#-tips--use-cases)
+	- [📚 References](#-references)
 
 ---
 
@@ -116,6 +117,4 @@ spec:
 - [Kubernetes Headless Services](https://kubernetes.io/docs/concepts/services-networking/service/#headless-services)
 - [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)
 
----
 
-🎉 Happy Stateful Networking!
