@@ -1,10 +1,29 @@
 const express = require('express');
 const http = require('http');
 const os = require('os');
+const fs = require('fs');
+const path = require('path');
+
+const getColorFromFile = () => {
+	let color = process.env.DEFAULT_COLOR;
+	const filePath = process.env.COLOR_CONFIG_PATH;
+
+	if (filePath) {
+		try {
+			const colorFromFile = fs.readFileSync(path.resolve(filePath), 'utf8').trim();
+			color = colorFromFile;
+		}
+		catch (err) {
+			console.error(`Error reading color from file: ${err}`);
+		}
+	}
+	return color || 'blue'
+
+};
 
 const app = express();
 const port = 80;
-const color = "blue";
+const color = getColorFromFile();
 const hostname = os.hostname();
 
 const delay_startup = process.env.DELAY_STARTUP === 'true';

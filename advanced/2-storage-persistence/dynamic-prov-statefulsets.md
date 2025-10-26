@@ -1,0 +1,160 @@
+# 🚀 Dynamic Provisioning & StatefulSets in Kubernetes
+
+## Table of Contents
+- [🚀 Dynamic Provisioning \& StatefulSets in Kubernetes](#-dynamic-provisioning--statefulsets-in-kubernetes)
+	- [Table of Contents](#table-of-contents)
+	- [🗂️ Overview](#️-overview)
+	- [⚡ Dynamic PVCs](#-dynamic-pvcs)
+	- [🏗️ StatefulSets with Dynamic Storage](#️-statefulsets-with-dynamic-storage)
+	- [🗃️ Manual Local PVs \& PVCs](#️-manual-local-pvs--pvcs)
+	- [📝 Tips \& Use Cases](#-tips--use-cases)
+	- [📚 References](#-references)
+
+---
+
+## 🗂️ Overview
+Kubernetes makes it easy to manage persistent storage for stateful apps. You can use dynamic provisioning (let Kubernetes create storage for you) or manually create local PersistentVolumes (PVs) and PersistentVolumeClaims (PVCs).
+
+---
+
+## ⚡ Dynamic PVCs
+Dynamic provisioning lets you request storage and have Kubernetes automatically create a matching PV for you, using a StorageClass (like `standard`).
+
+**Sample:**
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+	name: dynamic-pvc
+spec:
+	resources:
+		requests:
+			storage: 1Gi
+	accessModes:
+		- ReadWriteOnce
+	storageClassName: standard
+```
+
+---
+
+## 🏗️ StatefulSets with Dynamic Storage
+StatefulSets are used for apps that need stable network identity and persistent storage. Each replica gets its own PVC, which can be dynamically provisioned.
+
+**Sample:**
+```yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+	name: demo-ss
+spec:
+	serviceName: busybox
+	replicas: 2
+	selector:
+		matchLabels:
+			app: busybox
+	template:
+		metadata:
+			labels:
+				app: busybox
+		spec:
+			containers:
+				- name: busybox
+					image: busybox:1.36.1
+					command: ['sh', '-c', 'sleep 3600']
+					resources:
+						requests:
+							memory: "64Mi"
+							cpu: "250m"
+						limits:
+							memory: "128Mi"
+							cpu: "500m"
+					volumeMounts:
+						- name: local-volume
+							mountPath: /mnt/local
+	volumeClaimTemplates:
+		- metadata:
+				name: local-volume
+			spec:
+				accessModes: 
+					- ReadWriteOnce
+				storageClassName: standard
+				resources:
+					requests:
+						storage: 128Mi
+```
+
+---
+
+## 🗃️ Manual Local PVs & PVCs
+You can manually create local PVs and PVCs for more control, especially in single-node clusters or for testing.
+
+**Sample:**
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+	name: local-volume
+spec:
+	capacity:
+		storage: 1Gi
+	accessModes:
+		- ReadWriteOnce
+	persistentVolumeReclaimPolicy: Retain
+	storageClassName: local-storage
+	local:
+		path: /mnt/disks/local1
+	nodeAffinity:
+		required:
+			nodeSelectorTerms:
+				- matchExpressions:
+						- key: kubernetes.io/hostname
+							operator: In
+							values: ['minikube']
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+	name: local-volume-claim
+spec:
+	resources:
+		requests:
+			storage: 1Gi
+	accessModes:
+		- ReadWriteOnce
+	storageClassName: local-storage
+---
+apiVersion: v1
+kind: Pod
+metadata:
+	name: local-volume-pod
+spec:
+	containers:
+		- name: local-vol
+			image: busybox:1.36.1
+			command: ['sh', '-c', 'sleep 3600']
+			volumeMounts:
+				- name: local-storage
+					mountPath: /mnt/local
+	volumes:
+		- name: local-storage
+			persistentVolumeClaim:
+				claimName: local-volume-claim
+```
+
+---
+
+## 📝 Tips & Use Cases
+- 🧩 **StatefulSets**: Use for databases, queues, or apps needing stable storage and identity.
+- ⚡ **Dynamic PVCs**: Let Kubernetes handle storage creation for you—just request what you need!
+- 🗃️ **Manual PVs**: Great for local disks, testing, or when you want full control.
+- 🏷️ **Node Affinity**: Pin PVs to specific nodes for local storage.
+- 🧹 **Reclaim Policy**: Use `Retain` to keep data after PVC deletion, or `Delete` to clean up automatically.
+
+---
+
+## 📚 References
+- [Kubernetes StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)
+- [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+- [Dynamic Provisioning](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/)
+
+
