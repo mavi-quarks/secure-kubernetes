@@ -1,11 +1,14 @@
 const express = require('express');
 const controllerRouter = express.Router();
-const { getColorFromFile, getHostname} = require('../utils');
+const { getHostname} = require('../utils');
+const { getColor } = require('../db/color');
 
 controllerRouter.get('/', (req, res) => {
-    const color = getColorFromFile();
+	const {format, colorKey} = req.query;
+
+    const color = getColor({ key: colorKey });
 	const hostname = getHostname();
-	const {format} = req.query;
+	
 	if (format === 'json') {
 		res.json({color, hostname});
 	} else {
